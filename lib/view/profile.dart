@@ -3,15 +3,17 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:mbook/view/widget/library.dart';
 import 'package:mbook/view/widget/search.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import '../../utils/colors.dart';
-import '../Bhome.dart';
+import '../utils/colors.dart';
+import 'Bhome.dart';
 
-class Profile extends StatefulWidget {
+class ProfileScreen extends StatefulWidget {
+  const ProfileScreen({super.key});
+
   @override
-  State<StatefulWidget> createState() => _ProfileState();
+  State<StatefulWidget> createState() => _ProfileScreenState();
 }
 
-class _ProfileState extends State<Profile> {
+class _ProfileScreenState extends State<ProfileScreen> {
   bool isButtonTapped = false;
   bool isButtonTapped1 = false;
   bool isButtonTapped2 = false;
@@ -41,7 +43,7 @@ class _ProfileState extends State<Profile> {
         )),
         child: Stack(
           children: [
-            Positioned(
+            const Positioned(
               top: 50,
               left: 10,
               right: 300,
@@ -70,13 +72,13 @@ class _ProfileState extends State<Profile> {
                     onPressed: () {
                       bottsheet();
                     },
-                    icon: Icon(Icons.settings))),
+                    icon: const Icon(Icons.settings))),
             Positioned(
                 top: 200,
                 bottom: 500,
                 left: 10,
                 right: 10,
-                child: Container(
+                child: SizedBox(
                   height: 200,
                   width: MediaQuery.of(context).size.width,
                   child: IntrinsicHeight(
@@ -85,7 +87,7 @@ class _ProfileState extends State<Profile> {
                         Text("BOOKS READ",
                             style: GoogleFonts.lora(
                                 fontSize: 18, fontWeight: FontWeight.bold)),
-                        VerticalDivider(
+                        const VerticalDivider(
                           indent: 80,
                           endIndent: 80,
                           color: Colors.grey,
@@ -93,7 +95,7 @@ class _ProfileState extends State<Profile> {
                         Text("\tTime Spent\t\t\t",
                             style: GoogleFonts.lora(
                                 fontSize: 18, fontWeight: FontWeight.bold)),
-                        VerticalDivider(
+                        const VerticalDivider(
                           indent: 80,
                           endIndent: 80,
                           color: Colors.grey,
@@ -101,7 +103,7 @@ class _ProfileState extends State<Profile> {
                         Text("\tCompleted",
                             style: GoogleFonts.lora(
                                 fontSize: 18, fontWeight: FontWeight.bold)),
-                        VerticalDivider(
+                        const VerticalDivider(
                           indent: 80,
                           endIndent: 80,
                           color: Colors.grey,
@@ -115,7 +117,7 @@ class _ProfileState extends State<Profile> {
                 bottom: 400,
                 left: 40,
                 right: 10,
-                child: Container(
+                child: SizedBox(
                   height: 200,
                   width: MediaQuery.of(context).size.width,
                   child: IntrinsicHeight(
@@ -124,7 +126,7 @@ class _ProfileState extends State<Profile> {
                         Text("\t\t\t0\t\t\t\t\t\t\t\t\t\t\t\t\t",
                             style: GoogleFonts.lora(
                                 fontSize: 18, fontWeight: FontWeight.bold)),
-                        VerticalDivider(
+                        const VerticalDivider(
                           indent: 90,
                           endIndent: 100,
                           color: Colors.grey,
@@ -132,7 +134,7 @@ class _ProfileState extends State<Profile> {
                         Text("\t\t\t0 Hr 0 Min\t\t",
                             style: GoogleFonts.lora(
                                 fontSize: 18, fontWeight: FontWeight.bold)),
-                        VerticalDivider(
+                        const VerticalDivider(
                           indent: 90,
                           endIndent: 100,
                           color: Colors.grey,
@@ -140,7 +142,7 @@ class _ProfileState extends State<Profile> {
                         Text("\t\t\t\t\t\t\t0\t\t\t\t\t\t\t\t\t\t",
                             style: GoogleFonts.lora(
                                 fontSize: 18, fontWeight: FontWeight.bold)),
-                        VerticalDivider(
+                        const VerticalDivider(
                           indent: 90,
                           endIndent: 100,
                           color: Colors.grey,
@@ -154,7 +156,7 @@ class _ProfileState extends State<Profile> {
                 bottom: 100,
                 left: 10,
                 right: 10,
-                child: Container(
+                child: SizedBox(
                   height: 800,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -163,7 +165,7 @@ class _ProfileState extends State<Profile> {
                       Text("Continue reading...",
                           style: GoogleFonts.lora(
                               fontSize: 20, fontWeight: FontWeight.bold)),
-                      Container(
+                      SizedBox(
                         height: 200,
                         width: MediaQuery.of(context).size.width,
                         child: ListView.builder(
@@ -173,7 +175,7 @@ class _ProfileState extends State<Profile> {
                               return Padding(
                                 padding:
                                     const EdgeInsets.only(top: 20.0, right: 10),
-                                child: Container(
+                                child: SizedBox(
                                   height: 200,
                                   width: 100,
                                   child: Image(
@@ -205,7 +207,7 @@ class _ProfileState extends State<Profile> {
                     IconButton(
                         onPressed: () {
                           Navigator.push(context,
-                              MaterialPageRoute(builder: (context) => BHome()));
+                              MaterialPageRoute(builder: (context) => const BHome()));
                           setState(() {
                             isButtonTapped = !isButtonTapped;
                             isButtonTapped1 = false;
@@ -223,7 +225,7 @@ class _ProfileState extends State<Profile> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => BSearch()));
+                                  builder: (context) => const BSearch()));
                           setState(() {
                             isButtonTapped1 = !isButtonTapped1;
                             isButtonTapped2 = false;
@@ -239,7 +241,7 @@ class _ProfileState extends State<Profile> {
                     IconButton(
                         onPressed: () {
                           Navigator.push(context,
-                              MaterialPageRoute(builder: (context) => BLib()));
+                              MaterialPageRoute(builder: (context) => const BLib()));
 
                           setState(() {
                             isButtonTapped2 = !isButtonTapped2;
@@ -258,7 +260,7 @@ class _ProfileState extends State<Profile> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => Profile()));
+                                  builder: (context) => const ProfileScreen()));
                           setState(() {
                             isButtonTapped2 = false;
                             isButtonTapped1 = false;
@@ -281,7 +283,7 @@ class _ProfileState extends State<Profile> {
   }
 
   void getvalue() async {
-    final SharedPreferences prefs = await SharedPreferences.getInstance()!;
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
 
     setState(() {
       name = prefs.getString("username")!;
@@ -298,28 +300,28 @@ class _ProfileState extends State<Profile> {
             children: [
               InkWell(
                 onTap: () {},
-                child: ListTile(
+                child: const ListTile(
                   leading: Icon(Icons.privacy_tip_outlined),
                   title: Text("Privacy"),
                 ),
               ),
               InkWell(
                 onTap: () {},
-                child: ListTile(
+                child: const ListTile(
                   leading: Icon(Icons.help),
                   title: Text("Help and support"),
                 ),
               ),
               InkWell(
                 onTap: () {},
-                child: ListTile(
+                child: const ListTile(
                   leading: Icon(Icons.chat),
                   title: Text("About"),
                 ),
               ),
               InkWell(
                 onTap: () {},
-                child: ListTile(
+                child: const ListTile(
                   leading: Icon(Icons.logout_rounded),
                   title: Text("Logout"),
                 ),

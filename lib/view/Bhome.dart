@@ -3,13 +3,15 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:mbook/utils/colors.dart';
 import 'package:mbook/view/widget/carousel.dart';
 import 'package:mbook/view/widget/library.dart';
-import 'package:mbook/view/widget/profile.dart';
+import 'package:mbook/view/profile.dart';
 import 'package:mbook/view/widget/search.dart';
-// void main(){
-//   runApp(MaterialApp(home: BHome(),));
-// }
+void main(){
+  runApp(const MaterialApp(home: BHome(),));
+}
 
 class BHome extends StatefulWidget {
+  const BHome({super.key});
+
   @override
   State<StatefulWidget> createState() => _BHomeState();
 }
@@ -35,7 +37,7 @@ class _BHomeState extends State<BHome> {
             CustomScrollView(
               slivers: [
                 SliverAppBar(
-                  leading: Text(""),
+                  leading: const Text(""),
                   backgroundColor: ln3,
                   elevation: 0,
                   forceElevated: true,
@@ -61,9 +63,9 @@ class _BHomeState extends State<BHome> {
                 SliverToBoxAdapter(
                     child: Padding(
                   padding: const EdgeInsets.only(top: 20.0, bottom: 20),
-                  child: Container(height: 200, width: 100, child: Carslide()),
+                  child: SizedBox(height: 200, width: 100, child: Carslide()),
                 )),
-                SliverToBoxAdapter(
+                const SliverToBoxAdapter(
                   child: Divider(
                     color: Colors.grey,
                   ),
@@ -81,7 +83,7 @@ class _BHomeState extends State<BHome> {
                     ),
                   ),
                 ),
-                SliverToBoxAdapter(
+                const SliverToBoxAdapter(
                   child: Divider(
                     color: Colors.white,
                     thickness: 20,
@@ -100,9 +102,9 @@ class _BHomeState extends State<BHome> {
                 SliverToBoxAdapter(
                     child: Padding(
                   padding: const EdgeInsets.only(top: 20.0, bottom: 20),
-                  child: Container(height: 200, width: 300, child: Carslide()),
+                  child: SizedBox(height: 200, width: 300, child: Carslide()),
                 )),
-                SliverToBoxAdapter(
+                const SliverToBoxAdapter(
                   child: Divider(
                     color: Colors.grey,
                   ),
@@ -120,7 +122,7 @@ class _BHomeState extends State<BHome> {
                     ),
                   ),
                 ),
-                SliverToBoxAdapter(
+                const SliverToBoxAdapter(
                   child: Divider(
                     color: Colors.white,
                     thickness: 20,
@@ -137,9 +139,9 @@ class _BHomeState extends State<BHome> {
                 SliverToBoxAdapter(
                     child: Padding(
                   padding: const EdgeInsets.only(top: 20.0, bottom: 20),
-                  child: Container(height: 200, width: 300, child: Carslide()),
+                  child: SizedBox(height: 200, width: 300, child: Carslide()),
                 )),
-                SliverToBoxAdapter(
+                const SliverToBoxAdapter(
                   child: Divider(
                     color: Colors.grey,
                   ),
@@ -157,7 +159,7 @@ class _BHomeState extends State<BHome> {
                     ),
                   ),
                 ),
-                SliverToBoxAdapter(
+                const SliverToBoxAdapter(
                   child: Divider(
                     color: Colors.white,
                     thickness: 20,
@@ -174,9 +176,9 @@ class _BHomeState extends State<BHome> {
                 SliverToBoxAdapter(
                     child: Padding(
                   padding: const EdgeInsets.only(top: 20.0, bottom: 20),
-                  child: Container(height: 200, width: 300, child: Carslide()),
+                  child: SizedBox(height: 200, width: 300, child: Carslide()),
                 )),
-                SliverToBoxAdapter(
+                const SliverToBoxAdapter(
                   child: Divider(
                     color: Colors.grey,
                   ),
@@ -194,7 +196,7 @@ class _BHomeState extends State<BHome> {
                     ),
                   ),
                 ),
-                SliverToBoxAdapter(
+                const SliverToBoxAdapter(
                   child: Divider(
                     color: Colors.white,
                     thickness: 20,
@@ -213,9 +215,9 @@ class _BHomeState extends State<BHome> {
                 SliverToBoxAdapter(
                     child: Padding(
                   padding: const EdgeInsets.only(top: 20.0, bottom: 20),
-                  child: Container(height: 200, width: 300, child: Carslide()),
+                  child: SizedBox(height: 200, width: 300, child: Carslide()),
                 )),
-                SliverToBoxAdapter(
+                const SliverToBoxAdapter(
                   child: Divider(
                     color: Colors.grey,
                   ),
@@ -233,7 +235,7 @@ class _BHomeState extends State<BHome> {
                     ),
                   ),
                 ),
-                SliverToBoxAdapter(
+                const SliverToBoxAdapter(
                   child: Divider(
                     color: Colors.white,
                     thickness: 20,
@@ -250,7 +252,7 @@ class _BHomeState extends State<BHome> {
                 SliverToBoxAdapter(
                     child: Padding(
                   padding: const EdgeInsets.only(top: 20.0, bottom: 150),
-                  child: Container(height: 200, width: 300, child: Carslide()),
+                  child: SizedBox(height: 200, width: 300, child: Carslide()),
                 )),
               ],
             ),
@@ -288,7 +290,7 @@ class _BHomeState extends State<BHome> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => BSearch()));
+                                  builder: (context) => const BSearch()));
                           setState(() {
                             isButtonTapped1 = !isButtonTapped1;
                             isButtonTapped2 = false;
@@ -304,7 +306,7 @@ class _BHomeState extends State<BHome> {
                     IconButton(
                         onPressed: () {
                           Navigator.push(context,
-                              MaterialPageRoute(builder: (context) => BLib()));
+                              MaterialPageRoute(builder: (context) => const BLib()));
                           setState(() {
                             isButtonTapped2 = !isButtonTapped2;
                             isButtonTapped1 = false;
@@ -322,7 +324,7 @@ class _BHomeState extends State<BHome> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => Profile()));
+                                  builder: (context) => const ProfileScreen()));
                           setState(() {
                             isButtonTapped3 = !isButtonTapped3;
                             isButtonTapped2 = false;

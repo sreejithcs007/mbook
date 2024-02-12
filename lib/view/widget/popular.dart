@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:mbook/utils/colors.dart';
 
 class Carslide extends StatelessWidget {
   var img = [ "assets/image/science.jpg",
@@ -14,6 +12,8 @@ class Carslide extends StatelessWidget {
     "Comic",
     "Horror"
   ];
+
+  Carslide({super.key});
 
   @override
   Widget build(BuildContext context) {

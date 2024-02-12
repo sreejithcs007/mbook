@@ -5,6 +5,8 @@ import 'package:mbook/utils/colors.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'firstPage.dart';
 class BBoard extends StatefulWidget {
+  const BBoard({super.key});
+
   @override
   State<BBoard> createState() => _BBoardState();
 }
@@ -26,7 +28,7 @@ class _BBoardState extends State<BBoard> {
     if (seenOnboarding) {
       Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => FirstPage()),
+          MaterialPageRoute(builder: (context) => const FirstPage()),
       );
   }
   }
@@ -39,13 +41,13 @@ class _BBoardState extends State<BBoard> {
             image: Container(
                 height: MediaQuery.of(context).size.height,
                 width: MediaQuery.of(context).size.width,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                     image: DecorationImage(
 
                   image: AssetImage("assets/image/000.jpg"),
                   fit: BoxFit.cover,
                 ))),
-            titleWidget: Container(
+            titleWidget: SizedBox(
               height: 200,
               width: MediaQuery.of(context).size.width,
               child: Column(
@@ -68,17 +70,17 @@ class _BBoardState extends State<BBoard> {
               ),
             ),
             body: "",
-            decoration: PageDecoration(fullScreen: true,titlePadding: EdgeInsets.only(top: 10,bottom: 30))),
+            decoration: const PageDecoration(fullScreen: true,titlePadding: EdgeInsets.only(top: 10,bottom: 30))),
         PageViewModel(
             image: Container(
                 height: MediaQuery.of(context).size.height,
                 width: MediaQuery.of(context).size.width,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                     image: DecorationImage(
 
                         image: AssetImage("assets/image/inimreadurfav.png"),
                         fit: BoxFit.cover))),
-            titleWidget: Container(
+            titleWidget: SizedBox(
               height: 200,
               width: MediaQuery.of(context).size.width,
               child: Column(
@@ -97,18 +99,18 @@ class _BBoardState extends State<BBoard> {
               ),
             ),
             body: "",
-            decoration: PageDecoration(fullScreen: true)),
+            decoration: const PageDecoration(fullScreen: true)),
         PageViewModel(
             image: Container(
                 height: MediaQuery.of(context).size.height,
                 width: MediaQuery.of(context).size.width,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                     image: DecorationImage(
 
                         image: AssetImage("assets/image/01.jpg"),
                         fit: BoxFit.cover))),
             // child: Image(image: AssetImage("assets/image/33.jpg"),fit: BoxFit.fill)),
-            titleWidget: Container(
+            titleWidget: SizedBox(
               height: 200,
               width: MediaQuery.of(context).size.width,
               child: Column(
@@ -135,17 +137,17 @@ class _BBoardState extends State<BBoard> {
               ),
             ),
             body: "",
-            decoration: PageDecoration(fullScreen: true)),
+            decoration: const PageDecoration(fullScreen: true)),
         PageViewModel(
             image: Container(
                 height: MediaQuery.of(context).size.height,
                 width: MediaQuery.of(context).size.width,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                     image: DecorationImage(
 
                         image: AssetImage("assets/image/kpp.jpg"),
                         fit: BoxFit.cover))),
-            titleWidget: Container(
+            titleWidget: SizedBox(
               height: 250,
               width: MediaQuery.of(context).size.width,
               child: Column(
@@ -172,12 +174,12 @@ class _BBoardState extends State<BBoard> {
               ),
             ),
             body: "",
-            decoration: PageDecoration(fullScreen: true)),
+            decoration: const PageDecoration(fullScreen: true)),
       ],
       dotsDecorator: DotsDecorator(
         activeShape:
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-        activeSize: Size(15, 15),
+        activeSize: const Size(15, 15),
         color: btton,
         activeColor: ontxt,
       ),
@@ -185,13 +187,13 @@ class _BBoardState extends State<BBoard> {
         SharedPreferences prefs = await SharedPreferences.getInstance();
         await prefs.setBool('seenOnboarding', true);
         Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => FirstPage()));
+            context, MaterialPageRoute(builder: (context) => const FirstPage()));
       },
       onSkip: () async {
         SharedPreferences prefs = await SharedPreferences.getInstance();
         await prefs.setBool('seenOnboarding', true);
         Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => FirstPage()));
+            context, MaterialPageRoute(builder: (context) => const FirstPage()));
       },
       done: Text(
         "GET STARTED",
@@ -199,7 +201,7 @@ class _BBoardState extends State<BBoard> {
           color: sk,
         ),
       ),
-      back: Icon(Icons.arrow_back_outlined),
+      back: const Icon(Icons.arrow_back_outlined),
       next:Text("NEXT",style: GoogleFonts.lemon(fontSize: 15,color: sk)),
       skip: Text("SKIP",style: GoogleFonts.lemon(fontSize: 15,color: sk),),
       showSkipButton: true,

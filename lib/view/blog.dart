@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:mbook/view/Mainpage.dart';
 import 'package:mbook/view/breg.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import '../utils/colors.dart';
-import 'Bhome.dart';
 
 class BLog extends StatefulWidget {
+  const BLog({super.key});
+
   @override
   State<BLog> createState() => _BLogState();
 }
@@ -38,7 +40,7 @@ class _BLogState extends State<BLog> {
               Container(
                 height: MediaQuery.of(context).size.height,
                 width: MediaQuery.of(context).size.width,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   image: DecorationImage(
                       opacity: 0.5,
                       image: AssetImage("assets/image/lbg2.jpg"),
@@ -71,7 +73,7 @@ class _BLogState extends State<BLog> {
                 left: 70,
                 right: 50,
                 bottom: 500,
-                child: Container(
+                child: SizedBox(
                   height: 100,
                   width: 100,
                   child: Text(
@@ -88,7 +90,7 @@ class _BLogState extends State<BLog> {
                   left: 50,
                   right: 50,
                   bottom: 400,
-                  child: Container(
+                  child: SizedBox(
                       height: 100,
                       width: 100,
                       child: Padding(
@@ -101,13 +103,14 @@ class _BLogState extends State<BLog> {
                                 !email.contains("gmail.com")) {
                               return "Invalid email";
                             }
+                            return null;
                           },
                           decoration: InputDecoration(
                               label: const Text("EMAIL"),
                               prefixIcon: const Icon(Icons.email_outlined),
                               border: OutlineInputBorder(
                                   borderSide:
-                                      BorderSide(color: Colors.red, width: 2),
+                                      const BorderSide(color: Colors.red, width: 2),
                                   borderRadius: BorderRadius.circular(20))),
                         ),
                       ))),
@@ -126,6 +129,7 @@ class _BLogState extends State<BLog> {
                         if (password!.isEmpty || password.length < 6) {
                           return "password must not be empty or length should be greater than 6";
                         }
+                        return null;
                       },
                       decoration: InputDecoration(
                           label: const Text("PASSWORD"),
@@ -151,7 +155,7 @@ class _BLogState extends State<BLog> {
                   bottom: 280,
                   left: 100,
                   right: 100,
-                  child: Container(
+                  child: SizedBox(
                     height: 100,
                     width: 50,
                     child: MaterialButton(
@@ -180,18 +184,18 @@ class _BLogState extends State<BLog> {
                 right: 40,
                 child: Row(children: <Widget>[
                   Expanded(
-                    child: new Container(
+                    child: Container(
                         margin: const EdgeInsets.only(left: 10.0, right: 20.0),
-                        child: Divider(
+                        child: const Divider(
                           color: Colors.black,
                           height: 36,
                         )),
                   ),
-                  Text("OR"),
+                  const Text("OR"),
                   Expanded(
-                    child: new Container(
+                    child: Container(
                         margin: const EdgeInsets.only(left: 20.0, right: 10.0),
-                        child: Divider(
+                        child: const Divider(
                           color: Colors.black,
                           height: 36,
                         )),
@@ -212,9 +216,9 @@ class _BLogState extends State<BLog> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => BRegister()));
+                                  builder: (context) => const BRegister()));
                         },
-                        child: Text(
+                        child: const Text(
                           "Not an User? SIGN UP!",
                         )),
                   ))
@@ -234,12 +238,12 @@ class _BLogState extends State<BLog> {
     //if a user is logged in then mark it as not a new user
     preferences.setBool("newuser", false);
 
-    String? stored_uname = preferences.getString("username");
-    String? stored_upass = preferences.getString("pass");
+    String? storedUname = preferences.getString("username");
+    String? storedUpass = preferences.getString("pass");
 
-    if (stored_uname == uname && stored_upass == upass) {
+    if (storedUname == uname && storedUpass == upass) {
       Navigator.of(context)
-          .pushReplacement(MaterialPageRoute(builder: (context) => BHome()));
+          .pushReplacement(MaterialPageRoute(builder: (context) => const MainPage()));
     } else {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
           backgroundColor: btton,

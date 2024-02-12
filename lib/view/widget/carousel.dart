@@ -11,6 +11,8 @@ class Carslide extends StatelessWidget {
   ];
   var txt = ["Science", "Detective", "Comic", "Horror"];
 
+  Carslide({super.key});
+
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
@@ -21,7 +23,7 @@ class Carslide extends StatelessWidget {
             padding: const EdgeInsets.only(left: 10.0, right: 10),
             child: Container(
                 // color: Colors.blue,
-                alignment: Alignment(0, 0.5),
+                alignment: const Alignment(0, 0.5),
                 height: 200,
                 width: 100,
                 decoration: BoxDecoration(

@@ -4,14 +4,11 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:mbook/utils/colors.dart';
 import 'package:mbook/view/Bonboard.dart';
 
-void main() {
-  runApp(MaterialApp(
-    home: Splash2(),
-    debugShowCheckedModeBanner: false,
-  ));
-}
+
 
 class Splash2 extends StatefulWidget {
+  const Splash2({super.key});
+
   @override
   State<StatefulWidget> createState() =>
       _Splash2tate(); // create a mutable state for this widget
@@ -20,9 +17,9 @@ class Splash2 extends StatefulWidget {
 class _Splash2tate extends State<Splash2> {
   @override
   void initState() {
-    Timer(Duration(seconds: 4), () {
+    Timer(const Duration(seconds: 4), () {
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => BBoard()));
+          context, MaterialPageRoute(builder: (context) => const BBoard()));
     });
     super.initState();
   }
@@ -38,7 +35,7 @@ class _Splash2tate extends State<Splash2> {
           Padding(
             padding: const EdgeInsets.only(left: 80.0),
             child: Container(
-              child: Image(image: AssetImage("assets/image/sp3.jpg")),
+              child: const Image(image: AssetImage("assets/image/sp3.jpg")),
             ),
           ),
           Padding(

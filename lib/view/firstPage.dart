@@ -5,13 +5,15 @@ import 'blog.dart';
 import 'breg.dart';
 
 class FirstPage extends StatelessWidget {
+  const FirstPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
             image: DecorationImage(
                 opacity: 0.5,
                 image: AssetImage(
@@ -34,7 +36,7 @@ class FirstPage extends StatelessWidget {
                       //     color: ontxt,
                       //     fontSize: 35,
                       //     fontWeight: FontWeight.bold),
-                      children: [
+                      children: const [
                     TextSpan(text: "GET \n"),
                     TextSpan(text: "STARTED!\n"),
                     TextSpan(text: "Join us now  and \nStart your\n"),
@@ -47,7 +49,7 @@ class FirstPage extends StatelessWidget {
               child: MaterialButton(
                 onPressed: () {
                   Navigator.push(
-                      context, MaterialPageRoute(builder: (context) => BLog()));
+                      context, MaterialPageRoute(builder: (context) => const BLog()));
                 },
                 height: 50,
                 minWidth: 200,
@@ -66,7 +68,7 @@ class FirstPage extends StatelessWidget {
               child: MaterialButton(
                 onPressed: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => BRegister()));
+                      MaterialPageRoute(builder: (context) => const BRegister()));
                 },
                 height: 50,
                 minWidth: 240,

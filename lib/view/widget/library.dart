@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mbook/view/widget/carousel.dart';
-import 'package:mbook/view/widget/profile.dart';
+import 'package:mbook/view/profile.dart';
 import 'package:mbook/view/widget/search.dart';
 import '../../utils/colors.dart';
 import '../Bhome.dart';
 
 class BLib extends StatefulWidget {
+  const BLib({super.key});
+
   @override
   State<BLib> createState() => _BLibState();
 }
@@ -51,7 +53,7 @@ class _BLibState extends State<BLib> {
             ),
             Padding(
               padding: const EdgeInsets.only(top: 20.0, left: 10, right: 10),
-              child: Container(
+              child: SizedBox(
                   height: 200,
                   width: MediaQuery.of(context).size.width,
                   //color: Colors.red,
@@ -65,7 +67,7 @@ class _BLibState extends State<BLib> {
             ),
             Padding(
               padding: const EdgeInsets.only(top: 20.0, left: 10, right: 10),
-              child: Container(
+              child: SizedBox(
                   height: 200,
                   width: MediaQuery.of(context).size.width,
                   //color: Colors.red,
@@ -86,7 +88,7 @@ class _BLibState extends State<BLib> {
                     IconButton(
                         onPressed: () {
                           Navigator.push(context,
-                              MaterialPageRoute(builder: (context) => BHome()));
+                              MaterialPageRoute(builder: (context) => const BHome()));
                           setState(() {
                             isButtonTapped = !isButtonTapped;
                             isButtonTapped1 = false;
@@ -104,7 +106,7 @@ class _BLibState extends State<BLib> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => BSearch()));
+                                  builder: (context) => const BSearch()));
                           setState(() {
                             isButtonTapped1 = !isButtonTapped1;
                             isButtonTapped2 = false;
@@ -120,7 +122,7 @@ class _BLibState extends State<BLib> {
                     IconButton(
                         onPressed: () {
                           Navigator.push(context,
-                              MaterialPageRoute(builder: (context) => BLib()));
+                              MaterialPageRoute(builder: (context) => const BLib()));
 
                           setState(() {
                             isButtonTapped2 = !isButtonTapped2;
@@ -139,7 +141,7 @@ class _BLibState extends State<BLib> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => Profile()));
+                                  builder: (context) => const ProfileScreen()));
                           setState(() {
                             isButtonTapped3 = !isButtonTapped3;
                             isButtonTapped2 = false;

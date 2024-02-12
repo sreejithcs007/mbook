@@ -6,6 +6,8 @@ import 'package:mbook/view/blog.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class BRegister extends StatefulWidget {
+  const BRegister({super.key});
+
   @override
   State<BRegister> createState() => _BRegisterState();
 }
@@ -31,7 +33,7 @@ class _BRegisterState extends State<BRegister> {
               Container(
               height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(
                   opacity: 0.5,
                   image: AssetImage("assets/image/lbg2.jpg"),
@@ -66,7 +68,7 @@ class _BRegisterState extends State<BRegister> {
                       left: 70,
                       right: 50,
                       bottom: 500,
-                      child: Container(
+                      child: SizedBox(
                         height: 100,
                         width: 100,
                         child: Text(
@@ -81,7 +83,7 @@ class _BRegisterState extends State<BRegister> {
                         left: 50,
                         right: 50,
                         bottom: 400,
-                        child: Container(
+                        child: SizedBox(
                             height: 100,
                             width: 100,
                             child: Padding(
@@ -94,12 +96,13 @@ class _BRegisterState extends State<BRegister> {
                                       !email.contains("gmail.com")) {
                                     return "Invalid email";
                                   }
+                                  return null;
                                 },
                                 decoration: InputDecoration(
                                     label: const Text("EMAIL"),
                                     prefixIcon: const Icon(Icons.email_outlined),
                                     border: OutlineInputBorder(
-                                        borderSide: BorderSide(color: Colors.red,width: 2),
+                                        borderSide: const BorderSide(color: Colors.red,width: 2),
                                         borderRadius: BorderRadius.circular(20))),
                               ),
                             ))),
@@ -118,6 +121,7 @@ class _BRegisterState extends State<BRegister> {
                               if (password!.isEmpty || password.length < 6) {
                                 return "password must not be empty or length should be greater than 6";
                               }
+                              return null;
                             },
                             decoration: InputDecoration(
                                 label: const Text("PASSWORD"),
@@ -149,6 +153,7 @@ class _BRegisterState extends State<BRegister> {
                           if(confirmpassword!.isEmpty || pwd != confirmpassword){
                             return "password must be same";
                           }
+                          return null;
                         },
           
                         obscureText: showpwd2,
@@ -180,7 +185,7 @@ class _BRegisterState extends State<BRegister> {
                         bottom: 230,
                         left: 100,
                         right: 100 ,
-                        child: Container(
+                        child: SizedBox(
                           height: 100,
                           width: 50,
                           child: MaterialButton(
@@ -190,7 +195,7 @@ class _BRegisterState extends State<BRegister> {
                               final validkey = valid.currentState!.validate();
                               if (validkey == true) {
                                 storeData();
-                                Navigator.push(context, MaterialPageRoute(builder: (context) => BLog()));
+                                Navigator.push(context, MaterialPageRoute(builder: (context) => const BLog()));
           
                               } else {
                                 ScaffoldMessenger.of(context).showSnackBar(SnackBar(
@@ -211,18 +216,18 @@ class _BRegisterState extends State<BRegister> {
                       right: 40,
                       child: Row(children: <Widget>[
                         Expanded(
-                          child: new Container(
+                          child: Container(
                               margin: const EdgeInsets.only(left: 10.0, right: 20.0),
-                              child: Divider(
+                              child: const Divider(
                                 color: Colors.black,
                                 height: 36,
                               )),
                         ),
-                        Text("OR"),
+                        const Text("OR"),
                         Expanded(
-                          child: new Container(
+                          child: Container(
                               margin: const EdgeInsets.only(left: 20.0, right: 10.0),
-                              child: Divider(
+                              child: const Divider(
                                 color: Colors.black,
                                 height: 36,
                               )),
@@ -241,9 +246,9 @@ class _BRegisterState extends State<BRegister> {
                         child: Container(child: TextButton(
                             onPressed: () {
                               Navigator.push(context,
-                                  MaterialPageRoute(builder: (context) => BLog()));
+                                  MaterialPageRoute(builder: (context) => const BLog()));
                             },
-                            child: Text("Already an User? LOGIN!",)),))
+                            child: const Text("Already an User? LOGIN!",)),))
                   ],
               ),
           ),
