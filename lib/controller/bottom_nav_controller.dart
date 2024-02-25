@@ -13,9 +13,9 @@ class BottomNavController with ChangeNotifier {
   }
 
   List<Widget> myPages = [
-    const HomeScreen(),
+   HomeScreen(),
     SearchScreen(),
-    const CategoryScreen(),
+     CategoryScreen(),
 
   ];
 }

@@ -10,7 +10,7 @@ class MainPage extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //body: Provider.of<BottomNavController>(context).myPages[Provider.of<BottomNavController>(context).selectedIndex],
+      body: Provider.of<BottomNavController>(context).myPages[Provider.of<BottomNavController>(context).selectedIndex],
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(55),

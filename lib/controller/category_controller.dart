@@ -10,10 +10,16 @@ class CategoryController with ChangeNotifier{
 
   String category = '';
 
+  List<BookModel> _books = [];
+  List<BookModel> get books => _books;
+
+  int _startIndex = 0;
+
+
 
   onTap({required int index}){
     category = categoryList[index].toLowerCase();
-    fetchData();
+    fetchData(category);
     print(category);
     notifyListeners();
   }
@@ -23,23 +29,31 @@ class CategoryController with ChangeNotifier{
   late BookModel bookModel;
   bool isLoading = false;
 
-  void fetchData() async {
+   fetchData(category) async {
     isLoading = true;
     final url = Uri.parse(
-        "https://www.googleapis.com/books/v1/volumes?q=$category&maxResults=39");
+        "https://www.googleapis.com/books/v1/volumes?q=$category");
     print(category);
 
     final response = await http.get(url);
     print(response.statusCode);
-    Map<String,dynamic> decodedData ={};
 
-    if(response.statusCode == 200){
-      decodedData = jsonDecode(response.body);
+
+    if(response.statusCode == 200) {
+      final Map<String, dynamic> decodeddata = jsonDecode(response.body);
+      if (decodeddata['items'] != null) {
+        final List<BookModel> newBooks = decodeddata['items']
+            .map<BookModel>((bookData) => BookModel.fromJson(bookData))
+            .toList();
+        _books.addAll(newBooks);
+        print(_books);
+        //_startIndex += newBooks.length;
+        notifyListeners();
+      }
     }
     else{
       print("Api failed");
     }
-    bookModel = BookModel.fromJson(decodedData);
     isLoading = false;
     notifyListeners();
   }

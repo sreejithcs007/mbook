@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mbook/view/searchscreen.dart';
+import 'package:mbook/controller/listcon.dart';
+import 'package:mbook/view/splash.dart';
+
 import 'package:provider/provider.dart';
 import 'controller/bottom_nav_controller.dart';
 import 'controller/category_controller.dart';
@@ -30,11 +32,12 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create : (context) => CategoryController(),
-        )
+        ),
+        ChangeNotifierProvider(create: (context)=>List1())
 
       ],
       child:  MaterialApp(
-        home: SearchScreen(),
+        home: Splash2(),
         debugShowCheckedModeBanner: false,
 
       ),

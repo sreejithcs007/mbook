@@ -109,7 +109,7 @@ class _BBoardState extends State<BBoard> {
 
                         image: AssetImage("assets/image/01.jpg"),
                         fit: BoxFit.cover))),
-            // child: Image(image: AssetImage("assets/image/33.jpg"),fit: BoxFit.fill)),
+
             titleWidget: SizedBox(
               height: 200,
               width: MediaQuery.of(context).size.width,
