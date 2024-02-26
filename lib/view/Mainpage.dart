@@ -18,7 +18,7 @@ class MainPage extends StatelessWidget{
           color: Colors.yellow
         ),
         child: BottomNavigationBar(
-          backgroundColor: Colors.yellow,
+          backgroundColor: Colors.white,
 
 
           items: const [

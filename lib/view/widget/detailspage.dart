@@ -35,6 +35,7 @@ class Details extends StatelessWidget {
                 icon: Icon(Icons.arrow_back_ios)),
             floating: true,
             pinned: true,
+           // backgroundColor: Colors.white.withOpacity(0.1),
           ),
           SliverToBoxAdapter(
             child: Padding(
@@ -62,7 +63,7 @@ class Details extends StatelessWidget {
           SliverToBoxAdapter(
             child: Container(
               width: MediaQuery.of(context).size.width,
-              alignment: Alignment.centerLeft,
+              alignment: Alignment.center,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
